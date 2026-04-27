@@ -5,6 +5,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { X, ArrowLeft } from "lucide-react";
 
+import Logo from "@/components/Logo";
+
 export default function Navbar({ showReturn = false }: { showReturn?: boolean }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -38,8 +40,8 @@ export default function Navbar({ showReturn = false }: { showReturn?: boolean })
         </div>
         
         <div className="w-1/3 flex justify-center">
-          <Link href="/">
-            <h1 className="font-serif text-2xl md:text-3xl tracking-widest uppercase text-ink">Dafne</h1>
+          <Link href="/" className="group flex items-center justify-center">
+            <Logo className="text-3xl md:text-4xl group-hover:opacity-80 transition-opacity" leafClassName="w-3 h-3 md:w-3.5 md:h-3.5" />
           </Link>
         </div>
         
@@ -80,7 +82,7 @@ export default function Navbar({ showReturn = false }: { showReturn?: boolean })
                 </button>
               </div>
               <div className="w-1/3 flex justify-center">
-                <h1 className="font-serif text-2xl md:text-3xl tracking-widest uppercase text-ink">Dafne</h1>
+                <Logo className="text-3xl md:text-4xl" leafClassName="w-3 h-3 md:w-3.5 md:h-3.5" />
               </div>
               <div className="w-1/3"></div>
             </div>
