@@ -41,7 +41,7 @@ export default function Navbar({ showReturn = false }: { showReturn?: boolean })
         
         <div className="w-1/3 flex justify-center">
           <Link href="/" className="group flex items-center justify-center">
-            <Logo className="text-3xl md:text-4xl group-hover:opacity-80 transition-opacity" leafClassName="w-3 h-3 md:w-3.5 md:h-3.5" />
+            <Logo className="w-8 h-8 md:w-10 md:h-10 group-hover:opacity-80 transition-opacity" />
           </Link>
         </div>
         
@@ -82,7 +82,7 @@ export default function Navbar({ showReturn = false }: { showReturn?: boolean })
                 </button>
               </div>
               <div className="w-1/3 flex justify-center">
-                <Logo className="text-3xl md:text-4xl" leafClassName="w-3 h-3 md:w-3.5 md:h-3.5" />
+                <Logo className="w-8 h-8 md:w-10 md:h-10" />
               </div>
               <div className="w-1/3"></div>
             </div>

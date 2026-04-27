@@ -228,7 +228,7 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="py-24 px-8 md:px-16 flex flex-col items-center text-center bg-ink text-bone">
-        <Logo className="text-6xl md:text-8xl mb-12" leafClassName="w-5 h-5 md:w-8 md:h-8" inverted={true} />
+        <Logo className="w-24 h-24 md:w-32 md:h-32 mb-12" inverted={true} />
         <p className="text-sm tracking-[0.2em] uppercase text-stone mb-12">Quiet luxury is not achieved through expensive materials. <br/> It is achieved through consistent restraint.</p>
         <button className="text-xs uppercase tracking-[0.2em] text-white hover:text-stone transition-colors underline underline-offset-8">
           Contact the Atelier
