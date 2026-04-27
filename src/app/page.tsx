@@ -1,7 +1,8 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { SlidersHorizontal } from "lucide-react";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { SlidersHorizontal, X } from "lucide-react";
 
 const products = [
   {
@@ -35,8 +36,114 @@ const products = [
 ];
 
 export default function Home() {
+  const [isRefineOpen, setIsRefineOpen] = useState(false);
+
   return (
     <main className="min-h-screen">
+      {/* Refine Drawer */}
+      <AnimatePresence>
+        {isRefineOpen && (
+          <>
+            {/* Overlay */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.5 }}
+              className="fixed inset-0 bg-ink/20 backdrop-blur-sm z-40"
+              onClick={() => setIsRefineOpen(false)}
+            />
+            {/* Drawer */}
+            <motion.div
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{ type: "tween", duration: 0.5, ease: [0.25, 1, 0.5, 1] }}
+              className="fixed top-0 right-0 w-full md:w-[480px] h-full bg-bone z-50 p-8 md:p-16 overflow-y-auto flex flex-col"
+            >
+              <div className="flex justify-between items-center mb-16">
+                <h3 className="font-serif text-2xl tracking-widest uppercase text-ink">Refine</h3>
+                <button 
+                  onClick={() => setIsRefineOpen(false)}
+                  className="text-taupe hover:text-ink transition-colors"
+                >
+                  <X size={24} strokeWidth={1} />
+                </button>
+              </div>
+
+              <div className="flex flex-col gap-12 flex-grow">
+                {/* Category: Collection */}
+                <div className="flex flex-col gap-4">
+                  <h4 className="text-xs tracking-[0.2em] uppercase text-stone mb-2">Collection</h4>
+                  {["The Icons", "New Arrivals", "Exclusive to Dafne", "Travel Essentials"].map((item) => (
+                    <label key={item} className="flex items-center gap-4 group cursor-pointer">
+                      <div className="w-3 h-3 border border-stone group-hover:border-ink transition-colors rounded-full flex items-center justify-center">
+                        <div className="w-1.5 h-1.5 bg-transparent group-hover:bg-ink transition-colors rounded-full" />
+                      </div>
+                      <span className="text-sm text-taupe group-hover:text-ink transition-colors">{item}</span>
+                    </label>
+                  ))}
+                </div>
+
+                {/* Category: Skin Concern */}
+                <div className="flex flex-col gap-4">
+                  <h4 className="text-xs tracking-[0.2em] uppercase text-stone mb-2">Skin Concern</h4>
+                  {["Dehydration & Dryness", "Loss of Elasticity", "Redness & Sensitivity", "Uneven Texture"].map((item) => (
+                    <label key={item} className="flex items-center gap-4 group cursor-pointer">
+                      <div className="w-3 h-3 border border-stone group-hover:border-ink transition-colors rounded-full flex items-center justify-center">
+                        <div className="w-1.5 h-1.5 bg-transparent group-hover:bg-ink transition-colors rounded-full" />
+                      </div>
+                      <span className="text-sm text-taupe group-hover:text-ink transition-colors">{item}</span>
+                    </label>
+                  ))}
+                </div>
+
+                {/* Category: Ingredient */}
+                <div className="flex flex-col gap-4">
+                  <h4 className="text-xs tracking-[0.2em] uppercase text-stone mb-2">Ingredient</h4>
+                  {["TFC8® (Augustinus Bader)", "Miracle Broth™ (La Mer)", "Hyaluronic Acid", "Botanical Extracts"].map((item) => (
+                    <label key={item} className="flex items-center gap-4 group cursor-pointer">
+                      <div className="w-3 h-3 border border-stone group-hover:border-ink transition-colors rounded-full flex items-center justify-center">
+                        <div className="w-1.5 h-1.5 bg-transparent group-hover:bg-ink transition-colors rounded-full" />
+                      </div>
+                      <span className="text-sm text-taupe group-hover:text-ink transition-colors">{item}</span>
+                    </label>
+                  ))}
+                </div>
+
+                {/* Category: Ritual */}
+                <div className="flex flex-col gap-4">
+                  <h4 className="text-xs tracking-[0.2em] uppercase text-stone mb-2">Ritual</h4>
+                  {["Morning Preparation", "Evening Recovery", "The Weekly Mask", "Body Ceremony"].map((item) => (
+                    <label key={item} className="flex items-center gap-4 group cursor-pointer">
+                      <div className="w-3 h-3 border border-stone group-hover:border-ink transition-colors rounded-full flex items-center justify-center">
+                        <div className="w-1.5 h-1.5 bg-transparent group-hover:bg-ink transition-colors rounded-full" />
+                      </div>
+                      <span className="text-sm text-taupe group-hover:text-ink transition-colors">{item}</span>
+                    </label>
+                  ))}
+                </div>
+              </div>
+
+              <div className="mt-16 pt-8 border-t border-stone/20 flex justify-between items-center">
+                <button 
+                  className="text-xs tracking-[0.2em] uppercase text-stone hover:text-ink transition-colors"
+                  onClick={() => setIsRefineOpen(false)}
+                >
+                  Clear All
+                </button>
+                <button 
+                  className="text-xs tracking-[0.2em] uppercase text-bone bg-ink px-8 py-3 hover:bg-ink/90 transition-colors"
+                  onClick={() => setIsRefineOpen(false)}
+                >
+                  Apply Selections
+                </button>
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
+
       {/* Navigation (Minimal) */}
       <nav className="flex justify-between items-center py-8 px-8 md:px-16 border-b border-stone/20">
         <div className="w-1/3">
@@ -86,7 +193,10 @@ export default function Home() {
       <section className="px-8 md:px-16 py-24 bg-white">
         <div className="flex justify-between items-end mb-16">
           <h3 className="font-serif text-3xl md:text-4xl">The Selection</h3>
-          <button className="flex items-center gap-2 text-sm uppercase tracking-[0.2em] text-taupe hover:text-ink transition-colors group">
+          <button 
+            onClick={() => setIsRefineOpen(true)}
+            className="flex items-center gap-2 text-sm uppercase tracking-[0.2em] text-taupe hover:text-ink transition-colors group"
+          >
             <SlidersHorizontal size={16} className="group-hover:stroke-ink transition-colors" />
             <span className="hidden md:inline">Refine</span>
           </button>
