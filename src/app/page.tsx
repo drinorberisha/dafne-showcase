@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { SlidersHorizontal, X } from "lucide-react";
+import Link from "next/link";
 
 const products = [
   {
@@ -224,9 +225,12 @@ export default function Home() {
                 <h4 className="font-serif text-2xl md:text-3xl mb-4 text-ink">{product.name}</h4>
                 <p className="text-sm text-taupe leading-relaxed max-w-sm mb-8">{product.description}</p>
                 <div className="mt-auto pt-4 border-t border-stone/20">
-                  <button className="text-xs tracking-[0.2em] uppercase text-ink hover:text-stone transition-colors font-medium">
+                  <Link 
+                    href={`/product/${product.id}`}
+                    className="text-xs tracking-[0.2em] uppercase text-ink hover:text-stone transition-colors font-medium inline-block"
+                  >
                     Inquire for Availability →
-                  </button>
+                  </Link>
                 </div>
               </div>
             </motion.div>
