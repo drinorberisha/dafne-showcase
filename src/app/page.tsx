@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { SlidersHorizontal, X } from "lucide-react";
 import Link from "next/link";
+import Navbar from "@/components/Navbar";
 
 const products = [
   {
@@ -146,21 +147,7 @@ export default function Home() {
       </AnimatePresence>
 
       {/* Navigation (Minimal) */}
-      <nav className="flex justify-between items-center py-8 px-8 md:px-16 border-b border-stone/20">
-        <div className="w-1/3">
-          <button className="text-sm font-medium tracking-[0.2em] uppercase text-taupe hover:text-ink transition-colors">
-            Menu
-          </button>
-        </div>
-        <div className="w-1/3 flex justify-center">
-          <h1 className="font-serif text-3xl tracking-widest uppercase">Dafne</h1>
-        </div>
-        <div className="w-1/3 flex justify-end">
-          <button className="text-sm font-medium tracking-[0.2em] uppercase text-taupe hover:text-ink transition-colors">
-            Atelier
-          </button>
-        </div>
-      </nav>
+      <Navbar />
 
       {/* Hero Section */}
       <section className="px-8 md:px-16 py-32 md:py-48 flex flex-col items-center text-center">

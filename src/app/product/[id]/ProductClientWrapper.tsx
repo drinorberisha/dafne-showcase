@@ -1,9 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowLeft } from "lucide-react";
-import Link from "next/link";
 import { useState } from "react";
+import Navbar from "@/components/Navbar";
 
 export interface ProductData {
   brand: string;
@@ -24,12 +23,7 @@ export default function ProductClientWrapper({ product }: { product: ProductData
 
   return (
     <>
-      <nav className="flex items-center py-8 px-8 md:px-16 border-b border-stone/20 sticky top-0 bg-bone/90 backdrop-blur-md z-30">
-        <Link href="/" className="flex items-center gap-4 text-sm font-medium tracking-[0.2em] uppercase text-taupe hover:text-ink transition-colors group">
-          <ArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
-          <span>Return</span>
-        </Link>
-      </nav>
+      <Navbar showReturn={true} />
 
       {/* Hero Product View */}
       <section className="flex flex-col lg:flex-row min-h-[90vh]">
