@@ -13,33 +13,80 @@ const products = [
     brand: "Augustinus Bader",
     name: "The Rich Cream",
     description: "An intensely luxurious, hydrating and nourishing daily moisturiser.",
-    image: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&q=80&w=800", // Placeholder minimal beauty
+    image: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&q=80&w=800",
+    collection: "The Icons",
+    concern: "Loss of Elasticity",
+    ingredient: "TFC8® (Augustinus Bader)",
+    ritual: "Morning Preparation",
   },
   {
     id: 2,
     brand: "La Mer",
     name: "Crème de la Mer",
     description: "The original — sourced directly. A legend of hydration.",
-    image: "https://images.unsplash.com/photo-1608248593842-8021c6a15ceac?auto=format&fit=crop&q=80&w=800", // Placeholder
+    image: "https://images.unsplash.com/photo-1608248593842-8021c6a15ceac?auto=format&fit=crop&q=80&w=800",
+    collection: "The Icons",
+    concern: "Dehydration & Dryness",
+    ingredient: "Miracle Broth™ (La Mer)",
+    ritual: "Evening Recovery",
   },
   {
     id: 3,
     brand: "Aesop",
     name: "Parsley Seed Anti-Oxidant Intense Serum",
     description: "A potent anti-oxidant serum tailored for city dwellers.",
-    image: "https://images.unsplash.com/photo-1615397323215-6202ea6895ce?auto=format&fit=crop&q=80&w=800", // Placeholder
+    image: "https://images.unsplash.com/photo-1615397323215-6202ea6895ce?auto=format&fit=crop&q=80&w=800",
+    collection: "Exclusive to Dafne",
+    concern: "Uneven Texture",
+    ingredient: "Botanical Extracts",
+    ritual: "Morning Preparation",
   },
   {
     id: 4,
     brand: "Dr. Barbara Sturm",
     name: "Hyaluronic Serum",
     description: "Fundamental hydration. Formulated with a highly concentrated balance.",
-    image: "https://images.unsplash.com/photo-1599305090598-fe179d501227?auto=format&fit=crop&q=80&w=800", // Placeholder
+    image: "https://images.unsplash.com/photo-1599305090598-fe179d501227?auto=format&fit=crop&q=80&w=800",
+    collection: "New Arrivals",
+    concern: "Redness & Sensitivity",
+    ingredient: "Hyaluronic Acid",
+    ritual: "Morning Preparation",
   }
 ];
 
 export default function Home() {
   const [isRefineOpen, setIsRefineOpen] = useState(false);
+  const [activeFilters, setActiveFilters] = useState({
+    collection: "",
+    concern: "",
+    ingredient: "",
+    ritual: "",
+  });
+
+  const toggleFilter = (category: string, value: string) => {
+    setActiveFilters(prev => ({
+      ...prev,
+      [category]: prev[category as keyof typeof prev] === value ? "" : value
+    }));
+  };
+
+  const clearFilters = () => {
+    setActiveFilters({
+      collection: "",
+      concern: "",
+      ingredient: "",
+      ritual: "",
+    });
+  };
+
+  const filteredProducts = products.filter(product => {
+    return (
+      (activeFilters.collection === "" || product.collection === activeFilters.collection) &&
+      (activeFilters.concern === "" || product.concern === activeFilters.concern) &&
+      (activeFilters.ingredient === "" || product.ingredient === activeFilters.ingredient) &&
+      (activeFilters.ritual === "" || product.ritual === activeFilters.ritual)
+    );
+  });
 
   return (
     <main className="min-h-screen">
@@ -79,11 +126,15 @@ export default function Home() {
                 <div className="flex flex-col gap-4">
                   <h4 className="text-label text-stone mb-2">Collection</h4>
                   {["The Icons", "New Arrivals", "Exclusive to Dafne", "Travel Essentials"].map((item) => (
-                    <label key={item} className="flex items-center gap-4 group cursor-pointer">
+                    <label 
+                      key={item} 
+                      className="flex items-center gap-4 group cursor-pointer"
+                      onClick={() => toggleFilter("collection", item)}
+                    >
                       <div className="w-3 h-3 border border-stone group-hover:border-ink transition-colors rounded-full flex items-center justify-center">
-                        <div className="w-1.5 h-1.5 bg-transparent group-hover:bg-ink transition-colors rounded-full" />
+                        <div className={`w-1.5 h-1.5 rounded-full transition-colors ${activeFilters.collection === item ? "bg-ink" : "bg-transparent group-hover:bg-ink/30"}`} />
                       </div>
-                      <span className="text-body text-taupe group-hover:text-ink transition-colors">{item}</span>
+                      <span className={`text-body transition-colors ${activeFilters.collection === item ? "text-ink" : "text-taupe group-hover:text-ink"}`}>{item}</span>
                     </label>
                   ))}
                 </div>
@@ -92,11 +143,15 @@ export default function Home() {
                 <div className="flex flex-col gap-4">
                   <h4 className="text-label text-stone mb-2">Skin Concern</h4>
                   {["Dehydration & Dryness", "Loss of Elasticity", "Redness & Sensitivity", "Uneven Texture"].map((item) => (
-                    <label key={item} className="flex items-center gap-4 group cursor-pointer">
+                    <label 
+                      key={item} 
+                      className="flex items-center gap-4 group cursor-pointer"
+                      onClick={() => toggleFilter("concern", item)}
+                    >
                       <div className="w-3 h-3 border border-stone group-hover:border-ink transition-colors rounded-full flex items-center justify-center">
-                        <div className="w-1.5 h-1.5 bg-transparent group-hover:bg-ink transition-colors rounded-full" />
+                        <div className={`w-1.5 h-1.5 rounded-full transition-colors ${activeFilters.concern === item ? "bg-ink" : "bg-transparent group-hover:bg-ink/30"}`} />
                       </div>
-                      <span className="text-body text-taupe group-hover:text-ink transition-colors">{item}</span>
+                      <span className={`text-body transition-colors ${activeFilters.concern === item ? "text-ink" : "text-taupe group-hover:text-ink"}`}>{item}</span>
                     </label>
                   ))}
                 </div>
@@ -105,11 +160,15 @@ export default function Home() {
                 <div className="flex flex-col gap-4">
                   <h4 className="text-label text-stone mb-2">Ingredient</h4>
                   {["TFC8® (Augustinus Bader)", "Miracle Broth™ (La Mer)", "Hyaluronic Acid", "Botanical Extracts"].map((item) => (
-                    <label key={item} className="flex items-center gap-4 group cursor-pointer">
+                    <label 
+                      key={item} 
+                      className="flex items-center gap-4 group cursor-pointer"
+                      onClick={() => toggleFilter("ingredient", item)}
+                    >
                       <div className="w-3 h-3 border border-stone group-hover:border-ink transition-colors rounded-full flex items-center justify-center">
-                        <div className="w-1.5 h-1.5 bg-transparent group-hover:bg-ink transition-colors rounded-full" />
+                        <div className={`w-1.5 h-1.5 rounded-full transition-colors ${activeFilters.ingredient === item ? "bg-ink" : "bg-transparent group-hover:bg-ink/30"}`} />
                       </div>
-                      <span className="text-body text-taupe group-hover:text-ink transition-colors">{item}</span>
+                      <span className={`text-body transition-colors ${activeFilters.ingredient === item ? "text-ink" : "text-taupe group-hover:text-ink"}`}>{item}</span>
                     </label>
                   ))}
                 </div>
@@ -118,11 +177,15 @@ export default function Home() {
                 <div className="flex flex-col gap-4">
                   <h4 className="text-label text-stone mb-2">Ritual</h4>
                   {["Morning Preparation", "Evening Recovery", "The Weekly Mask", "Body Ceremony"].map((item) => (
-                    <label key={item} className="flex items-center gap-4 group cursor-pointer">
+                    <label 
+                      key={item} 
+                      className="flex items-center gap-4 group cursor-pointer"
+                      onClick={() => toggleFilter("ritual", item)}
+                    >
                       <div className="w-3 h-3 border border-stone group-hover:border-ink transition-colors rounded-full flex items-center justify-center">
-                        <div className="w-1.5 h-1.5 bg-transparent group-hover:bg-ink transition-colors rounded-full" />
+                        <div className={`w-1.5 h-1.5 rounded-full transition-colors ${activeFilters.ritual === item ? "bg-ink" : "bg-transparent group-hover:bg-ink/30"}`} />
                       </div>
-                      <span className="text-body text-taupe group-hover:text-ink transition-colors">{item}</span>
+                      <span className={`text-body transition-colors ${activeFilters.ritual === item ? "text-ink" : "text-taupe group-hover:text-ink"}`}>{item}</span>
                     </label>
                   ))}
                 </div>
@@ -131,7 +194,7 @@ export default function Home() {
               <div className="mt-16 pt-8 border-t border-stone/20 flex justify-between items-center">
                 <button 
                   className="text-label text-stone hover:text-ink transition-colors"
-                  onClick={() => setIsRefineOpen(false)}
+                  onClick={clearFilters}
                 >
                   Clear All
                 </button>
@@ -192,11 +255,13 @@ export default function Home() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-32">
-          {products.map((product, index) => (
+          {filteredProducts.map((product, index) => (
             <motion.div 
               key={product.id}
+              layout
               initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8, delay: index * 0.1 }}
               className={`flex flex-col group ${index % 2 === 1 ? "md:mt-24" : ""}`}
