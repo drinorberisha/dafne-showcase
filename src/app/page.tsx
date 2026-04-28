@@ -191,7 +191,7 @@ export default function Home() {
           </button>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-24">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-32">
           {products.map((product, index) => (
             <motion.div 
               key={product.id}
@@ -199,25 +199,34 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8, delay: index * 0.1 }}
-              className="flex flex-col group"
+              className={`flex flex-col group ${index % 2 === 1 ? "md:mt-24" : ""}`}
             >
-              <div className="relative aspect-[3/4] w-full overflow-hidden bg-bone mb-8">
-                <img 
-                  src={product.image} 
-                  alt={product.name}
-                  className="object-cover w-full h-full object-center group-hover:scale-105 transition-transform duration-1000 ease-out grayscale-[20%]"
-                />
+              <div className="relative aspect-[4/5] w-full overflow-hidden bg-bone mb-12 flex items-center justify-center p-12 md:p-20">
+                <motion.div 
+                  className="relative w-full h-full"
+                  whileHover={{ scale: 1.02, transition: { duration: 0.6, ease: [0.25, 1, 0.5, 1] } }}
+                >
+                  <img 
+                    src={product.image} 
+                    alt={product.name}
+                    className={`object-cover w-[85%] h-[85%] absolute grayscale-[20%] transition-transform duration-1000 ease-out shadow-sm
+                      ${index % 2 === 0 ? "top-0 left-0" : "bottom-0 right-0"}`}
+                  />
+                </motion.div>
               </div>
-              <div className="flex flex-col flex-grow">
+              <div className="flex flex-col px-4">
                 <p className="text-label text-stone mb-3">{product.brand}</p>
-                <h4 className="font-serif text-2xl md:text-3xl mb-4 text-ink">{product.name}</h4>
-                <p className="text-body text-taupe leading-relaxed max-w-sm mb-8">{product.description}</p>
-                <div className="mt-auto pt-4 border-t border-stone/20">
+                <h4 className="font-serif text-2xl md:text-3xl mb-4 text-ink uppercase tracking-tight">{product.name}</h4>
+                <p className="text-body text-taupe leading-relaxed max-w-sm mb-8 italic">{product.description}</p>
+                <div className="mt-auto pt-6 border-t border-stone/10">
                   <Link 
                     href={`/product/${product.id}`}
-                    className="text-label text-ink hover:text-stone transition-colors font-medium inline-block"
+                    className="text-label text-ink hover:text-stone transition-colors font-medium inline-block relative group/link"
                   >
-                    Inquire for Availability →
+                    Explore the Selection
+                    <motion.span 
+                      className="absolute -bottom-1 left-0 w-0 h-[1px] bg-ink transition-all duration-300 group-hover/link:w-full"
+                    />
                   </Link>
                 </div>
               </div>

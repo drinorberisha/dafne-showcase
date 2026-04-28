@@ -26,27 +26,37 @@ export default function ProductClientWrapper({ product }: { product: ProductData
       <Navbar showReturn={true} />
 
       {/* Hero Product View */}
-      <section className="flex flex-col lg:flex-row min-h-[90vh]">
+      <section className="flex flex-col lg:flex-row min-h-[90vh] bg-bone">
         {/* Left: Imagery */}
-        <div className="w-full lg:w-1/2 p-8 md:p-16 flex flex-col gap-8">
+        <div className="w-full lg:w-1/2 p-8 md:p-16 lg:p-24 flex flex-col gap-12">
           <motion.div 
-            initial={{ opacity: 0, filter: "blur(10px)" }}
-            animate={{ opacity: 1, filter: "blur(0px)" }}
-            transition={{ duration: 1 }}
-            className="aspect-[4/5] relative overflow-hidden bg-white"
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1.2, ease: [0.25, 1, 0.5, 1] }}
+            className="aspect-[4/5] relative overflow-hidden bg-white p-12 md:p-24 flex items-center justify-center"
           >
             <img 
               src={product.heroImage} 
               alt={product.name}
-              className="w-full h-full object-cover object-center grayscale-[15%]"
+              className="w-[85%] h-[85%] object-cover object-center grayscale-[15%] shadow-md transform -translate-x-4 -translate-y-4"
             />
+            {/* Minimal Shadow/Depth Overlay */}
+            <div className="absolute inset-0 pointer-events-none border-[1px] border-ink/5" />
           </motion.div>
+          
           {product.images.length > 1 && (
-            <div className="grid grid-cols-2 gap-8">
+            <div className="grid grid-cols-2 gap-12">
               {product.images.map((img: string, i: number) => (
-                <div key={i} className="aspect-square relative overflow-hidden bg-white">
-                  <img src={img} className="w-full h-full object-cover grayscale-[15%]" alt="Detail" />
-                </div>
+                <motion.div 
+                  key={i} 
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.2 * i }}
+                  className={`aspect-square relative overflow-hidden bg-white p-6 ${i % 2 === 1 ? "mt-12" : ""}`}
+                >
+                  <img src={img} className="w-full h-full object-cover grayscale-[15%] shadow-sm" alt="Detail" />
+                </motion.div>
               ))}
             </div>
           )}
