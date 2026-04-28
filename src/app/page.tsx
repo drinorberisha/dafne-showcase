@@ -202,7 +202,7 @@ export default function Home() {
                   className="text-label text-bone bg-ink px-8 py-3 hover:bg-ink/90 transition-colors"
                   onClick={() => setIsRefineOpen(false)}
                 >
-                  Apply Selections
+                  Confirm Selection
                 </button>
               </div>
             </motion.div>
@@ -244,7 +244,7 @@ export default function Home() {
       {/* Product Grid Section */}
       <section className="px-8 md:px-16 py-24 bg-white">
         <div className="flex justify-between items-end mb-16">
-          <h3 className="font-serif text-3xl md:text-4xl">The Selection</h3>
+          <h3 className="font-serif text-3xl md:text-4xl">Atelier Selections</h3>
           <button 
             onClick={() => setIsRefineOpen(true)}
             className="flex items-center gap-2 text-label text-taupe hover:text-ink transition-colors group"
@@ -305,7 +305,7 @@ export default function Home() {
         <Logo className="w-24 h-24 md:w-32 md:h-32 mb-12" inverted={true} />
         <p className="text-body text-stone mb-12">Quiet luxury is not achieved through expensive materials. <br/> It is achieved through consistent restraint.</p>
         <button className="text-label text-white hover:text-stone transition-colors underline underline-offset-8">
-          Contact the Atelier
+          Connect with the Atelier
         </button>
       </footer>
     </main>

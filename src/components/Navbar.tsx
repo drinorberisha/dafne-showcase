@@ -34,7 +34,7 @@ export default function Navbar({ showReturn = false }: { showReturn?: boolean })
               onClick={() => setIsMenuOpen(true)}
               className="text-label text-taupe hover:text-ink transition-colors"
             >
-              Menu
+              The House
             </button>
           )}
         </div>
@@ -51,7 +51,7 @@ export default function Navbar({ showReturn = false }: { showReturn?: boolean })
               onClick={() => setIsMenuOpen(true)}
               className="text-label text-taupe hover:text-ink transition-colors"
             >
-              Menu
+              The House
             </button>
           ) : (
             <button className="text-label text-taupe hover:text-ink transition-colors">
@@ -88,7 +88,7 @@ export default function Navbar({ showReturn = false }: { showReturn?: boolean })
             </div>
 
             <div className="flex-grow flex flex-col items-center justify-center gap-8 md:gap-12 px-6">
-              {["The Collection", "Atelier Selections", "Rituals", "Sourcing Stories", "Contact"].map((item, i) => (
+              {["Atelier Selections", "Rituals", "Sourcing Stories", "Connection"].map((item, i) => (
                 <motion.div
                   key={item}
                   initial={{ opacity: 0, y: 20 }}
