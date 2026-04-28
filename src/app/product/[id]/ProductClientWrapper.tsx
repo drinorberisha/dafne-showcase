@@ -63,7 +63,7 @@ export default function ProductClientWrapper({ product }: { product: ProductData
             <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-ink mb-6 leading-tight">{product.name}</h1>
             <p className="text-sm tracking-[0.2em] uppercase text-taupe mb-12">{product.size}</p>
             
-            <p className="text-base text-taupe leading-relaxed max-w-md mb-12">
+            <p className="text-body text-taupe leading-relaxed max-w-md mb-12">
               {product.description}
             </p>
 
@@ -72,7 +72,7 @@ export default function ProductClientWrapper({ product }: { product: ProductData
               {product.certifications.map((cert: string) => (
                 <div key={cert} className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 bg-stone rounded-full" />
-                  <span className="text-xs tracking-[0.1em] uppercase text-ink">{cert}</span>
+                  <span className="text-label text-ink">{cert}</span>
                 </div>
               ))}
             </div>
@@ -84,7 +84,7 @@ export default function ProductClientWrapper({ product }: { product: ProductData
                   <button
                     key={tab}
                     onClick={() => setActiveTab(tab)}
-                    className={`pb-4 text-xs tracking-[0.2em] uppercase transition-colors relative ${
+                    className={`pb-4 text-label transition-colors relative ${
                       activeTab === tab ? "text-ink" : "text-stone hover:text-taupe"
                     }`}
                   >
@@ -101,7 +101,7 @@ export default function ProductClientWrapper({ product }: { product: ProductData
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4 }}
-                className="text-sm text-taupe leading-relaxed max-w-md min-h-[120px]"
+                className="text-body text-taupe max-w-md min-h-[120px]"
               >
                 {product[activeTab]}
               </motion.div>
@@ -109,10 +109,10 @@ export default function ProductClientWrapper({ product }: { product: ProductData
 
             {/* Inquire Action */}
             <div className="mt-auto pt-8">
-              <button className="w-full md:w-auto px-12 py-5 bg-ink text-bone text-xs uppercase tracking-[0.2em] hover:bg-ink/90 transition-colors">
+              <button className="w-full md:w-auto px-12 py-5 bg-ink text-bone text-label hover:bg-ink/90 transition-colors">
                 Inquire for Availability
               </button>
-              <p className="text-xs text-stone mt-6 italic">This item is currently held in our Prishtina atelier. Private viewings available upon request.</p>
+              <p className="text-caption text-stone mt-6 italic">This item is currently held in our Prishtina atelier. Private viewings available upon request.</p>
             </div>
           </motion.div>
         </div>

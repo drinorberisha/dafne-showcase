@@ -77,52 +77,52 @@ export default function Home() {
               <div className="flex flex-col gap-12 flex-grow">
                 {/* Category: Collection */}
                 <div className="flex flex-col gap-4">
-                  <h4 className="text-xs tracking-[0.2em] uppercase text-stone mb-2">Collection</h4>
+                  <h4 className="text-label text-stone mb-2">Collection</h4>
                   {["The Icons", "New Arrivals", "Exclusive to Dafne", "Travel Essentials"].map((item) => (
                     <label key={item} className="flex items-center gap-4 group cursor-pointer">
                       <div className="w-3 h-3 border border-stone group-hover:border-ink transition-colors rounded-full flex items-center justify-center">
                         <div className="w-1.5 h-1.5 bg-transparent group-hover:bg-ink transition-colors rounded-full" />
                       </div>
-                      <span className="text-sm text-taupe group-hover:text-ink transition-colors">{item}</span>
+                      <span className="text-body text-taupe group-hover:text-ink transition-colors">{item}</span>
                     </label>
                   ))}
                 </div>
 
                 {/* Category: Skin Concern */}
                 <div className="flex flex-col gap-4">
-                  <h4 className="text-xs tracking-[0.2em] uppercase text-stone mb-2">Skin Concern</h4>
+                  <h4 className="text-label text-stone mb-2">Skin Concern</h4>
                   {["Dehydration & Dryness", "Loss of Elasticity", "Redness & Sensitivity", "Uneven Texture"].map((item) => (
                     <label key={item} className="flex items-center gap-4 group cursor-pointer">
                       <div className="w-3 h-3 border border-stone group-hover:border-ink transition-colors rounded-full flex items-center justify-center">
                         <div className="w-1.5 h-1.5 bg-transparent group-hover:bg-ink transition-colors rounded-full" />
                       </div>
-                      <span className="text-sm text-taupe group-hover:text-ink transition-colors">{item}</span>
+                      <span className="text-body text-taupe group-hover:text-ink transition-colors">{item}</span>
                     </label>
                   ))}
                 </div>
 
                 {/* Category: Ingredient */}
                 <div className="flex flex-col gap-4">
-                  <h4 className="text-xs tracking-[0.2em] uppercase text-stone mb-2">Ingredient</h4>
+                  <h4 className="text-label text-stone mb-2">Ingredient</h4>
                   {["TFC8® (Augustinus Bader)", "Miracle Broth™ (La Mer)", "Hyaluronic Acid", "Botanical Extracts"].map((item) => (
                     <label key={item} className="flex items-center gap-4 group cursor-pointer">
                       <div className="w-3 h-3 border border-stone group-hover:border-ink transition-colors rounded-full flex items-center justify-center">
                         <div className="w-1.5 h-1.5 bg-transparent group-hover:bg-ink transition-colors rounded-full" />
                       </div>
-                      <span className="text-sm text-taupe group-hover:text-ink transition-colors">{item}</span>
+                      <span className="text-body text-taupe group-hover:text-ink transition-colors">{item}</span>
                     </label>
                   ))}
                 </div>
 
                 {/* Category: Ritual */}
                 <div className="flex flex-col gap-4">
-                  <h4 className="text-xs tracking-[0.2em] uppercase text-stone mb-2">Ritual</h4>
+                  <h4 className="text-label text-stone mb-2">Ritual</h4>
                   {["Morning Preparation", "Evening Recovery", "The Weekly Mask", "Body Ceremony"].map((item) => (
                     <label key={item} className="flex items-center gap-4 group cursor-pointer">
                       <div className="w-3 h-3 border border-stone group-hover:border-ink transition-colors rounded-full flex items-center justify-center">
                         <div className="w-1.5 h-1.5 bg-transparent group-hover:bg-ink transition-colors rounded-full" />
                       </div>
-                      <span className="text-sm text-taupe group-hover:text-ink transition-colors">{item}</span>
+                      <span className="text-body text-taupe group-hover:text-ink transition-colors">{item}</span>
                     </label>
                   ))}
                 </div>
@@ -130,13 +130,13 @@ export default function Home() {
 
               <div className="mt-16 pt-8 border-t border-stone/20 flex justify-between items-center">
                 <button 
-                  className="text-xs tracking-[0.2em] uppercase text-stone hover:text-ink transition-colors"
+                  className="text-label text-stone hover:text-ink transition-colors"
                   onClick={() => setIsRefineOpen(false)}
                 >
                   Clear All
                 </button>
                 <button 
-                  className="text-xs tracking-[0.2em] uppercase text-bone bg-ink px-8 py-3 hover:bg-ink/90 transition-colors"
+                  className="text-label text-bone bg-ink px-8 py-3 hover:bg-ink/90 transition-colors"
                   onClick={() => setIsRefineOpen(false)}
                 >
                   Apply Selections
@@ -156,7 +156,7 @@ export default function Home() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="text-sm tracking-[0.25em] uppercase text-taupe mb-8"
+          className="text-label text-taupe mb-8"
         >
           Prishtina ✦ Kosova
         </motion.p>
@@ -164,7 +164,7 @@ export default function Home() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
-          className="font-serif text-5xl md:text-7xl lg:text-8xl leading-tight max-w-4xl text-ink"
+          className="font-serif text-5xl md:text-7xl lg:text-8xl leading-[1.1] max-w-4xl text-ink"
         >
           An atelier of <br className="hidden md:block"/> rare beauty.
         </motion.h2>
@@ -172,7 +172,7 @@ export default function Home() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.6 }}
-          className="mt-12 text-lg md:text-xl text-taupe max-w-xl font-light italic font-serif"
+          className="mt-12 text-body md:text-xl text-taupe max-w-xl font-light italic font-serif"
         >
           Curation is the art of saying no to ninety-nine things so that one may shine.
         </motion.p>
@@ -184,7 +184,7 @@ export default function Home() {
           <h3 className="font-serif text-3xl md:text-4xl">The Selection</h3>
           <button 
             onClick={() => setIsRefineOpen(true)}
-            className="flex items-center gap-2 text-sm uppercase tracking-[0.2em] text-taupe hover:text-ink transition-colors group"
+            className="flex items-center gap-2 text-label text-taupe hover:text-ink transition-colors group"
           >
             <SlidersHorizontal size={16} className="group-hover:stroke-ink transition-colors" />
             <span className="hidden md:inline">Refine</span>
@@ -209,13 +209,13 @@ export default function Home() {
                 />
               </div>
               <div className="flex flex-col flex-grow">
-                <p className="text-xs tracking-[0.2em] uppercase text-stone mb-3">{product.brand}</p>
+                <p className="text-label text-stone mb-3">{product.brand}</p>
                 <h4 className="font-serif text-2xl md:text-3xl mb-4 text-ink">{product.name}</h4>
-                <p className="text-sm text-taupe leading-relaxed max-w-sm mb-8">{product.description}</p>
+                <p className="text-body text-taupe leading-relaxed max-w-sm mb-8">{product.description}</p>
                 <div className="mt-auto pt-4 border-t border-stone/20">
                   <Link 
                     href={`/product/${product.id}`}
-                    className="text-xs tracking-[0.2em] uppercase text-ink hover:text-stone transition-colors font-medium inline-block"
+                    className="text-label text-ink hover:text-stone transition-colors font-medium inline-block"
                   >
                     Inquire for Availability →
                   </Link>
@@ -229,8 +229,8 @@ export default function Home() {
       {/* Footer */}
       <footer className="py-24 px-8 md:px-16 flex flex-col items-center text-center bg-ink text-bone">
         <Logo className="w-24 h-24 md:w-32 md:h-32 mb-12" inverted={true} />
-        <p className="text-sm tracking-[0.2em] uppercase text-stone mb-12">Quiet luxury is not achieved through expensive materials. <br/> It is achieved through consistent restraint.</p>
-        <button className="text-xs uppercase tracking-[0.2em] text-white hover:text-stone transition-colors underline underline-offset-8">
+        <p className="text-body text-stone mb-12">Quiet luxury is not achieved through expensive materials. <br/> It is achieved through consistent restraint.</p>
+        <button className="text-label text-white hover:text-stone transition-colors underline underline-offset-8">
           Contact the Atelier
         </button>
       </footer>

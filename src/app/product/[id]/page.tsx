@@ -33,6 +33,36 @@ const productsDetailData = {
     sourcing: "The secret to the Miracle Broth™ lies not just in the ingredients, but in the fermentation. Giant sea kelp is harvested by hand off the coast of Vancouver Island, flown fresh to the Max Huber Research Labs.",
     ritual: "The secret to activating the Miracle Broth™ lies in a soothing ritual. Warm it for a few seconds between the fingers until it becomes translucent, then press gently into the skin.",
     certifications: ["Cruelty-Free", "Paraben-Free"]
+  },
+  "3": {
+    brand: "Aesop",
+    name: "Parsley Seed Anti-Oxidant Intense Serum",
+    size: "60 ML",
+    price: "€85",
+    description: "A potent anti-oxidant serum tailored for city dwellers. This weightless film-forming serum provides daily protection against airborne pollutants.",
+    heroImage: "https://images.unsplash.com/photo-1615397323215-6202ea6895ce?auto=format&fit=crop&q=80&w=1200",
+    images: [
+      "https://images.unsplash.com/photo-1615397323215-6202ea6895ce?auto=format&fit=crop&q=80&w=800",
+    ],
+    story: "Formulated in Melbourne, Aesop has spent decades perfecting the art of the botanical extract. The Parsley Seed range was born from a desire to protect skin in urban environments without the weight of traditional creams.",
+    sourcing: "Sourced and bottled in Australia. Each bottle represents a meticulous balance of botanical extracts and laboratory-stabilized antioxidants.",
+    ritual: "Dispense three to five drops into the palms. Massage onto freshly cleansed and toned skin, from forehead to neck. Allow to set for a moment before proceeding with your day.",
+    certifications: ["Vegan", "Botanical", "City-Ready"]
+  },
+  "4": {
+    brand: "Dr. Barbara Sturm",
+    name: "Hyaluronic Serum",
+    size: "30 ML",
+    price: "€260",
+    description: "Fundamental hydration. Formulated with a highly concentrated balance of low and high molecular weight Hyaluronic Acid.",
+    heroImage: "https://images.unsplash.com/photo-1599305090598-fe179d501227?auto=format&fit=crop&q=80&w=1200",
+    images: [
+      "https://images.unsplash.com/photo-1599305090598-fe179d501227?auto=format&fit=crop&q=80&w=800",
+    ],
+    story: "Dr. Barbara Sturm’s medical background in orthopedics led to the discovery of Molecular Cosmetics. This serum is the 'white T-shirt' of any skincare wardrobe — essential, perfectly cut, and foundational.",
+    sourcing: "Scientifically developed in Dusseldorf, Germany. Pure, simple, and effective, it avoids the use of unnecessary fragrances or aggressive preservatives.",
+    ritual: "Apply a full pipette into the palm of your hand and pat it gently into the face. Wait 30 seconds for the serum to be absorbed before applying the Face Cream.",
+    certifications: ["Molecular Cosmetics", "Fragrance-Free", "German-Made"]
   }
 };
 

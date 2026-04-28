@@ -20,6 +20,15 @@ const config: Config = {
         serif: ["var(--font-playfair)", "serif"],
         sans: ["var(--font-inter)", "sans-serif"],
       },
+      fontSize: {
+        'body': ['11pt', { lineHeight: '1.65' }],
+        'caption': ['9pt', { lineHeight: '1.5' }],
+        'label': ['9pt', { letterSpacing: '0.25em', lineHeight: '1.2' }],
+        'display-tight': ['1.0', { lineHeight: '1.15' }],
+      },
+      letterSpacing: {
+        'ultra': '0.25em',
+      },
     },
   },
   plugins: [],

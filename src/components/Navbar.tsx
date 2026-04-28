@@ -24,7 +24,7 @@ export default function Navbar({ showReturn = false }: { showReturn?: boolean })
       <nav className="flex justify-between items-center py-6 md:py-8 px-6 md:px-16 border-b border-stone/20 sticky top-0 bg-bone/90 backdrop-blur-md z-30">
         <div className="w-1/3 flex justify-start">
           {showReturn ? (
-            <Link href="/" className="flex items-center gap-2 md:gap-4 text-xs md:text-sm font-medium tracking-[0.2em] uppercase text-taupe hover:text-ink transition-colors group">
+            <Link href="/" className="flex items-center gap-2 md:gap-4 text-label text-taupe hover:text-ink transition-colors group">
               <ArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
               <span className="hidden md:inline">Return</span>
               <span className="md:hidden">Back</span>
@@ -32,7 +32,7 @@ export default function Navbar({ showReturn = false }: { showReturn?: boolean })
           ) : (
             <button 
               onClick={() => setIsMenuOpen(true)}
-              className="text-xs md:text-sm font-medium tracking-[0.2em] uppercase text-taupe hover:text-ink transition-colors"
+              className="text-label text-taupe hover:text-ink transition-colors"
             >
               Menu
             </button>
@@ -49,12 +49,12 @@ export default function Navbar({ showReturn = false }: { showReturn?: boolean })
           {showReturn ? (
             <button 
               onClick={() => setIsMenuOpen(true)}
-              className="text-xs md:text-sm font-medium tracking-[0.2em] uppercase text-taupe hover:text-ink transition-colors"
+              className="text-label text-taupe hover:text-ink transition-colors"
             >
               Menu
             </button>
           ) : (
-            <button className="text-xs md:text-sm font-medium tracking-[0.2em] uppercase text-taupe hover:text-ink transition-colors">
+            <button className="text-label text-taupe hover:text-ink transition-colors">
               <span className="hidden md:inline">Atelier</span>
               <span className="md:hidden">Visit</span>
             </button>
@@ -78,7 +78,7 @@ export default function Navbar({ showReturn = false }: { showReturn?: boolean })
                   className="text-taupe hover:text-ink transition-colors flex items-center gap-2"
                 >
                   <X size={20} strokeWidth={1.5} />
-                  <span className="text-xs md:text-sm tracking-[0.2em] uppercase font-medium hidden md:inline">Close</span>
+                  <span className="text-label hidden md:inline">Close</span>
                 </button>
               </div>
               <div className="w-1/3 flex justify-center">
@@ -108,10 +108,10 @@ export default function Navbar({ showReturn = false }: { showReturn?: boolean })
             </div>
             
             <div className="py-8 md:py-12 flex flex-col items-center justify-center border-t border-stone/20">
-                <p className="text-[10px] md:text-xs tracking-[0.2em] uppercase text-stone mb-4">Prishtina ✦ Kosova</p>
+                <p className="text-label text-stone mb-4">Prishtina ✦ Kosova</p>
                 <div className="flex gap-8">
-                    <Link href="/" className="text-[10px] md:text-xs tracking-[0.2em] uppercase text-taupe hover:text-ink">Instagram</Link>
-                    <Link href="/" className="text-[10px] md:text-xs tracking-[0.2em] uppercase text-taupe hover:text-ink">WhatsApp</Link>
+                    <Link href="/" className="text-label text-taupe hover:text-ink">Instagram</Link>
+                    <Link href="/" className="text-label text-taupe hover:text-ink">WhatsApp</Link>
                 </div>
             </div>
           </motion.div>
