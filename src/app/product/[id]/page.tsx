@@ -17,6 +17,8 @@ const productsDetailData = {
     story: "Developed by Professor Augustinus Bader, a globally recognized biomedical scientist and physician, this formulation took thirty years of research. It works instinctively with the skin, supporting its natural trajectory of repair.",
     sourcing: "Formulated, tested, and poured in Germany. The cornerstone of the formula is TFC8® — a proprietary blend of natural amino acids, high-grade vitamins, and synthesized molecules naturally found in skin.",
     ritual: "Smooth two pumps over cleansed, dry face, neck and décolleté. In upward, sweeping motions, massage the cream along your jawline. Sweep from your nose to your ears and across your forehead.",
+    textureImage: "https://images.unsplash.com/photo-1612817288484-6f916006741a?auto=format&fit=crop&q=80&w=800",
+    textureDescription: "An ultra-rich, indulgent cream. It possesses a dense, buttery consistency that melts upon contact with the skin's warmth.",
     certifications: ["Cruelty-Free", "Vegan", "Clean Formula"]
   },
   "2": {
@@ -32,6 +34,8 @@ const productsDetailData = {
     story: "Born from the sea, the legendary Crème de la Mer has the power to transform the skin. In a short time, firmness improves, lines, wrinkles and the look of pores become less visible, skin looks virtually ageless.",
     sourcing: "The secret to the Miracle Broth™ lies not just in the ingredients, but in the fermentation. Giant sea kelp is harvested by hand off the coast of Vancouver Island, flown fresh to the Max Huber Research Labs.",
     ritual: "The secret to activating the Miracle Broth™ lies in a soothing ritual. Warm it for a few seconds between the fingers until it becomes translucent, then press gently into the skin.",
+    textureImage: "https://images.unsplash.com/photo-1601049541289-9b1b7bbbfe19?auto=format&fit=crop&q=80&w=800",
+    textureDescription: "Thick, balm-like, and substantial. It requires warming between the fingertips to activate the Miracle Broth™ before application.",
     certifications: ["Cruelty-Free", "Paraben-Free"]
   },
   "3": {
@@ -47,6 +51,8 @@ const productsDetailData = {
     story: "Formulated in Melbourne, Aesop has spent decades perfecting the art of the botanical extract. The Parsley Seed range was born from a desire to protect skin in urban environments without the weight of traditional creams.",
     sourcing: "Sourced and bottled in Australia. Each bottle represents a meticulous balance of botanical extracts and laboratory-stabilized antioxidants.",
     ritual: "Dispense three to five drops into the palms. Massage onto freshly cleansed and toned skin, from forehead to neck. Allow to set for a moment before proceeding with your day.",
+    textureImage: "https://images.unsplash.com/photo-1556227702-d1e4e7b5c232?auto=format&fit=crop&q=80&w=800",
+    textureDescription: "A medium-weight, golden serum. It glides effortlessly and is absorbed rapidly, leaving a breathable, matte finish on the skin.",
     certifications: ["Vegan", "Botanical", "City-Ready"]
   },
   "4": {
@@ -62,6 +68,8 @@ const productsDetailData = {
     story: "Dr. Barbara Sturm’s medical background in orthopedics led to the discovery of Molecular Cosmetics. This serum is the 'white T-shirt' of any skincare wardrobe — essential, perfectly cut, and foundational.",
     sourcing: "Scientifically developed in Dusseldorf, Germany. Pure, simple, and effective, it avoids the use of unnecessary fragrances or aggressive preservatives.",
     ritual: "Apply a full pipette into the palm of your hand and pat it gently into the face. Wait 30 seconds for the serum to be absorbed before applying the Face Cream.",
+    textureImage: "https://images.unsplash.com/photo-1616683693504-3ea7e9ad6fec?auto=format&fit=crop&q=80&w=800",
+    textureDescription: "Crystal clear and water-light. It feels instantly cooling and provides an immediate surge of hydration without any residue.",
     certifications: ["Molecular Cosmetics", "Fragrance-Free", "German-Made"]
   }
 };

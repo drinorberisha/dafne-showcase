@@ -15,6 +15,8 @@ export interface ProductData {
   story: string;
   sourcing: string;
   ritual: string;
+  textureImage: string;
+  textureDescription: string;
   certifications: string[];
 }
 
@@ -115,6 +117,25 @@ export default function ProductClientWrapper({ product }: { product: ProductData
               >
                 {product[activeTab]}
               </motion.div>
+            </div>
+
+            {/* Sensory Swatch Module */}
+            <div className="mb-16 p-8 bg-white/50 border border-stone/10">
+              <h4 className="text-label text-stone mb-6">Sensory Experience</h4>
+              <div className="flex flex-col md:flex-row gap-8 items-center">
+                <div className="w-full md:w-1/3 aspect-square relative overflow-hidden bg-bone">
+                  <img 
+                    src={product.textureImage} 
+                    alt="Texture Detail" 
+                    className="w-full h-full object-cover grayscale-[10%]"
+                  />
+                </div>
+                <div className="w-full md:w-2/3">
+                  <p className="text-caption text-taupe italic leading-relaxed">
+                    &quot;{product.textureDescription}&quot;
+                  </p>
+                </div>
+              </div>
             </div>
 
             {/* Inquire Action */}
